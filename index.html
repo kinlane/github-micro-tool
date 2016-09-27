@@ -29,6 +29,7 @@ title: My Github Micro Tool Base
     function checkToken()
       {
       $oAuthToken = Cookies.get('token');
+      console.log($oAuthToken);
       if($oAuthToken)
         {
         alert("The token is: " + $oAuthToken + '!');
@@ -45,6 +46,7 @@ title: My Github Micro Tool Base
 
       // Grab the token from cookie
       $oAuthToken = Cookies.get('token');
+      console.log($oAuthToken);
 
       // Setup the Github connection
       var github = new Github({token: $oAuthToken,auth: "oauth"});
