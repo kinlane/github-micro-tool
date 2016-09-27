@@ -45,21 +45,20 @@ title: Micro Tool
 
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
 
-        console.log('1');
-
         $.each(tree, function(treeKey, treeValue) {
 
-          console.log('2');
-
           $writepath = '_data/store.json';
-          $feedJSON = "write!";
+
           $path = treeValue['path'];
           $sha = treeValue['sha'];
 
           //console.log($path + ' == ' + $writepath);
 
-          repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) {});
-          console.log("writing " + $writepath);
+          if($path==$writepath)
+            {
+            repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
+            console.log("writing " + $writepath);
+            }
 
           });
         });
