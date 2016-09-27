@@ -55,15 +55,15 @@ title: My Github Micro Tool Base
       // Le'ts try to just get the Github Repo tree
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
 
-        if(typeof err != "undefined")
-          {
-          // If no error we have access
-          alert('We have access to API & repo!');
-          }
-        else
+        if(err.error == '404')
           {
           // If error we DO NOT have access
           alert('We have NO access to API & repo!');
+          }
+        else
+          {
+          // If no error we have access
+          alert('We have access to API & repo!');            
           }
 
         });
