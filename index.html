@@ -60,12 +60,12 @@ title: Micro Tool
 <h2>Cookie.js To Store The OAuth Token</h2>
 <p>Once the OAuth token is passed into the URL I use cookies.js to store the token for use across all pages of this micro tool. This approach helps prevent it being included in any links and passed between pages. Once each cookie expires, the user is required to pass another valid token in through the URL to set the cookie again, and open up API access to the applications backend. This is project is meant, and here is how you can test to see if the token has been received.</p>
 <ul>
-  <li><a href="#" onclick="">Check If Token Exists</a></li>
+  <li><a href="#" onclick="function checkToken(); return false;">Check If Token Exists</a></li>
 </ul>
 <h2>Github.js To Communicate With API</h2>
 <p>With a valid OAuth token, I use Github.js as the client side JavaScript client for interacting with the Github API. While Github.js allows for using almost all available API endpoints, for most application functionality it will be just about reading and writing YAML and JSON files using repository paths. For application functionality, I will rely on Liquid for reading YAML and JSON data, and Github.js for writing of data to the underlying repo using the Github API.</p>
 <ul>
-  <li><a href="#" onclick="testAccessToRepo();">Check If We Can Write To Repo</a></li>
+  <li><a href="#" onclick="testAccessToRepo(); return false;">Check If We Can Write To Repo</a></li>
 </ul>
 <h2>Forkable Base For Apps That Run 100% On Github</h2>
 <p>Hopefully this provides a base that can be used to demonstrate what is possible when you build applications on top of Github. I am going to fork it and build a simple prototype that reads and writes to a YAML file in the _data folder for the underlying repo, exploring what is possible when it comes to using Github as a data-driven micro tool platform.&nbsp;</p>
