@@ -53,6 +53,8 @@ title: My Github Micro Tool Base
       var repo = github.getRepo($org,$repo);
 
       // Le'ts try to just get the Github Repo tree
+      repo.getTree('gh-pages?recursive=true', function(err, tree) {
+
         if(err == null)
           {
           // If no error we have access
