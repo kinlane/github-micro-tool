@@ -43,8 +43,24 @@ title: Micro Tool
       var repo = github.getRepo($org,$repo);
 
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
-        console.log("in!");
+
+        $.each(tree, function(treeKey, treeValue) {
+
+          $writepath = '_data/store.json';
+
+          $path = treeValue['path'];
+          $sha = treeValue['sha'];
+
+          //console.log($path + ' == ' + $writepath);
+
+          if($path==$writepath)
+            {
+            repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
+            console.log("writing " + $writepath);
+            }
+          });
         });
+
       }
 
 </script>
