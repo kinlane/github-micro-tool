@@ -5,15 +5,15 @@ title: Micro Tool
 
 <script type="text/javascript">
 
-    var $oAuth_Token = getUrlVar('token');
+    var $oAuthToken = getUrlVar('token');
     var $org = 'kinlane';
     var $repo = 'github-micro-tool';
 
-    if($oAuth_Token !='')
+    if($oAuthToken !='')
       {
 
       // Setting a cookie value
-      Cookies.set('token', $oAuth_Token);
+      Cookies.set('token', $oAuthToken);
 
       // Set with expiration
       //Cookies.set('token', $oAuth_Token, { expires: '01/01/2017' });
@@ -23,8 +23,8 @@ title: Micro Tool
     // Does token exist
     function checkToken()
       {
-      $oAuth_Token = Cookies.get('token');
-      alert("token is: " + $oAuth_Token);
+      $oAuthToken = Cookies.get('token');
+      alert("token is: " + $oAuthToken);
       }
 
       // Test Access to Repo
