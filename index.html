@@ -57,15 +57,16 @@ title: Micro Tool
 
           if($path==$writepath)
             {
-              try {
 
+              try
+                {
                 repo.writemanual('gh-pages',$writepath, $writecontent, 'Save', $sha,  function(err) { });
-
-              }
-              catch (e) {
+                }
+              catch (e)
+                {
                  console.log('what?');
-              }
-              
+               }
+
             }
 
           });
