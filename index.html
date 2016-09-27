@@ -53,11 +53,10 @@ title: Micro Tool
           $path = treeValue['path'];
           $sha = treeValue['sha'];
 
-          //console.log($path + ' == ' + $writepath);
-
           if($path==$writepath)
             {
             repo.writemanual('gh-pages',$writepath, $writecontent, 'Save', $sha, function(err) { });
+
             console.log("writing " + $writepath);
             }
 
