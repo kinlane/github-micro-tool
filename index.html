@@ -29,7 +29,7 @@ title: My Github Micro Tool Base
     function checkToken()
       {
       $oAuthToken = Cookies.get('token');
-      console.log($oAuthToken);
+      console.log("token: " + $oAuthToken);
       if($oAuthToken)
         {
         alert("The token is: " + $oAuthToken + '!');
@@ -46,7 +46,7 @@ title: My Github Micro Tool Base
 
       // Grab the token from cookie
       $oAuthToken = Cookies.get('token');
-      console.log($oAuthToken);
+      console.log("token: " + $oAuthToken);
 
       // Setup the Github connection
       var github = new Github({token: $oAuthToken,auth: "oauth"});
@@ -54,16 +54,16 @@ title: My Github Micro Tool Base
 
       // Le'ts try to just get the Github Repo tree
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
-        console.log("IN:" + err)
-        if (typeof err != 'undefined')
+
+        if (typeof err == 'undefined')
           {
-          // If no error we have access
-          alert('We have access to API & repo!');
+            // If error we DO NOT have access
+            alert('We have NO access to API & repo!');
           }
         else
           {
-          // If error we DO NOT have access
-          alert('We have NO access to API & repo!');
+          // If no error we have access
+          alert('We have access to API & repo!');
           }
 
         });
