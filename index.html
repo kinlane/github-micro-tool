@@ -47,7 +47,7 @@ title: Micro Tool
 
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
 
-        if(err.error == '404')
+        if(!err)
           {
 
           $.each(tree, function(treeKey, treeValue) {
