@@ -48,6 +48,7 @@ title: Micro Tool
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
 
         $.each(tree, function(treeKey, treeValue) {
+          
           echo "1";
           $writepath = '_data/store.yaml';
           $writecontent = "---\n- item: 'successful write!'";
