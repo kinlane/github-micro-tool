@@ -1,9 +1,0 @@
----
-- id: 'XYJ123'
-  name: 'Product One'
-  description: 'This is the description for product one.'
-  price: '19.99'
-- id: 'XYJ234'
-  name: 'Product Two'
-  description: 'This is the description for product two.'
-  price: '19.99'
