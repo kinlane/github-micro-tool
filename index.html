@@ -48,6 +48,7 @@ title: Micro Tool
         $.each(tree, function(treeKey, treeValue) {
 
           $writepath = '_data/store.json';
+          $writecontent = "write!";
 
           $path = treeValue['path'];
           $sha = treeValue['sha'];
@@ -56,7 +57,7 @@ title: Micro Tool
 
           if($path==$writepath)
             {
-            repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
+            repo.writemanual('gh-pages',$writepath, $writecontent, 'Save', $sha, function(err) { });
             console.log("writing " + $writepath);
             }
 
