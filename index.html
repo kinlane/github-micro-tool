@@ -48,7 +48,7 @@ title: Micro Tool
         $.each(tree, function(treeKey, treeValue) {
 
           $writepath = '_data/store.yaml';
-          $writecontent = "write!";
+          $writecontent = "--- - item: 'successful write!'";
 
           $path = treeValue['path'];
           $sha = treeValue['sha'];
