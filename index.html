@@ -6,6 +6,9 @@ title: Micro Tool
 <script type="text/javascript">
 
     var $oAuth_Token = getUrlVar('token');
+    var $org = 'kinlane';
+    var $repo = 'github-micro-tool';
+
     if($oAuth_Token !='')
       {
 
@@ -23,6 +26,18 @@ title: Micro Tool
       $oAuth_Token = Cookies.get('token');
       alert("token is: " + $oAuth_Token);
       }
+
+      // Test Access to Repo
+      function testAccessToRepo()
+        {
+        $oAuth_Token = Cookies.get('token');
+        var github = new Github({token: $oAuth_Token,auth: "oauth"});
+        var repo = github.getRepo($org,$repo);
+
+        repo.getTree('gh-pages?recursive=true', function(err, tree) {
+          console.log("in!");
+          });
+        }
 
 </script>
 
@@ -49,5 +64,8 @@ title: Micro Tool
 </ul>
 <h2>Github.js To Communicate With API</h2>
 <p>With a valid OAuth token, I use Github.js as the client side JavaScript client for interacting with the Github API. While Github.js allows for using almost all available API endpoints, for most application functionality it will be just about reading and writing YAML and JSON files using repository paths. For application functionality, I will rely on Liquid for reading YAML and JSON data, and Github.js for writing of data to the underlying repo using the Github API.</p>
+<ul>
+  <li><a href="#" onclick="testAccessToRepo();">Check If We Can Write To Repo</a></li>
+</ul>
 <h2>Forkable Base For Apps That Run 100% On Github</h2>
-<p>Hopefully this provides a base that can be used to demonstrate what is possible when you build applications on top of Github. I'm going to fork it and build a simple prototype that reads and writes to a YAML file in the _data folder for the underlying repo, exploring what is possible when it comes to using Github as a data-driven micro tool platform.&nbsp;</p>
+<p>Hopefully this provides a base that can be used to demonstrate what is possible when you build applications on top of Github. I am going to fork it and build a simple prototype that reads and writes to a YAML file in the _data folder for the underlying repo, exploring what is possible when it comes to using Github as a data-driven micro tool platform.&nbsp;</p>
