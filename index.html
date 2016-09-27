@@ -47,34 +47,37 @@ title: Micro Tool
 
       repo.getTree('gh-pages?recursive=true', function(err, tree) {
 
-        console.log("1"+err);
+        if(err.error == '404')
+          {
 
-        $.each(err, function(errKey, errValue) {
-            console.log(errKey + ' = ' + errValue);
-        });
+          $.each(tree, function(treeKey, treeValue) {
 
-        $.each(tree, function(treeKey, treeValue) {
+            console.log("2");
 
-          console.log("2");
+            $writepath = '_data/store.yaml';
+            $writecontent = "---\n- item: 'successful write!'";
 
-          $writepath = '_data/store.yaml';
-          $writecontent = "---\n- item: 'successful write!'";
+            $path = treeValue['path'];
+            $sha = treeValue['sha'];
 
-          $path = treeValue['path'];
-          $sha = treeValue['sha'];
+            if($path==$writepath)
+              {
+                console.log("none!");
+                repo.writemanual('gh-pages', $writepath, $writecontent, 'Save', $sha, function(err) {
 
-          if($path==$writepath)
-            {
-              console.log("none!");
-              repo.writemanual('gh-pages', $writepath, $writecontent, 'Save', $sha, function(err) {
+                  console.log("here:" + err);
 
-                console.log("here:" + err);
+                  });
 
-                });
+              }
 
-            }
+            });
 
-          });
+          }
+          else {
+            alert('No access!');
+          }
+
         });
 
       }
