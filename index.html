@@ -52,17 +52,14 @@ title: Micro Tool
           console.log('2');
 
           $writepath = '_data/store.json';
-
+          $feedJSON = "write!";
           $path = treeValue['path'];
           $sha = treeValue['sha'];
 
           //console.log($path + ' == ' + $writepath);
 
-          if($path==$writepath)
-            {
-            repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
-            console.log("writing " + $writepath);
-            }
+          repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) {});
+          console.log("writing " + $writepath);
 
           });
         });
