@@ -24,7 +24,14 @@ title: Micro Tool
     function checkToken()
       {
       $oAuthToken = Cookies.get('token');
-      alert("token is: " + $oAuthToken);
+      if($oAuthToken)
+        {
+        alert("The token is: " + $oAuthToken);
+        }
+      else
+        {
+        alert("There is no token, you can pass in the url as ?token=[your token]");
+        }
       }
 
     // Test Access to Repo
