@@ -1,5 +1,5 @@
-title:        Github Micro Tool
-description:  This is Github micro tool.
+title:        My Github Micro Tool Base
+description:  This is base for my Github micro tooling
 url:          http://github-micro-tool.apievangelist.com
 
 version:      1.1.1
@@ -12,14 +12,8 @@ permalink:    pretty
 pygments:     true
 highlighter:  rouge
 
-permalink: /:categories/:year/:month/:day/:title/
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md",".DS_Store"]
 
-paginate: 20
-paginate_path: "/blog/page:num"
-
-categories_path : /categories.html
-tags_path : /tags.html
 
 production_url : http://github-micro-tool.apievangelist.com
 
